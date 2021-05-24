@@ -4,12 +4,10 @@ package pages;
 import cucumber.api.java8.En;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import io.cucumber.datatable.DataTable;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,9 +16,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
-public class PledgesPage implements En  {
+public class PledgesPage extends Common implements En  {
     private static final Logger logger = LoggerFactory.getLogger(PledgesPage.class);
-    public static WebDriver driver;
 
     @FindBy(xpath = "//span[@class='col-lg-3 mb-1 text-18 text-success fw-500']")
     List<WebElement> pledgeAmount;
@@ -34,11 +31,6 @@ public class PledgesPage implements En  {
     @FindBy(xpath = "//span[@class='collapsed']")
     WebElement showMoreBusinessPledges;
 
-
-    public void navigateToWebsite(){
-        String url = new ReadPropertyFile().getProperty(new File("testconfig.properties"), "url");
-        driver.get(url);
-    }
 
     /*
    Getting the number of pledges displayed below Show more button
@@ -142,6 +134,5 @@ public class PledgesPage implements En  {
             }
         }
     }
-
 
 }
