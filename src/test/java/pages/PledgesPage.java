@@ -32,11 +32,11 @@ public class PledgesPage extends Common implements En  {
     WebElement showMoreBusinessPledges;
 
 
-    /*
-   Getting the number of pledges displayed below Show more button
-   If the count is more than 0 then that amount is subtracted from the total pledges count
-   Otherwise if the count is 0 then it verifies the number of pledges
-*/
+     /*
+        Getting the number of pledges displayed below Show more button
+        If the count is more than 0 then that amount is subtracted from the total pledges count
+        Otherwise if the count is 0 then it verifies the number of pledges
+    */
     public void validatePledgesDisplayed(String value) throws Exception {
         int totalPledgesCount = pledges.size();
         int totalPledgesCollapsedCount = pledgesCollapsed.size();
@@ -52,7 +52,7 @@ public class PledgesPage extends Common implements En  {
         }
     }
 
-    /*
+     /*
        Converting the pledge amount list to a sortable list then storing in a list where it's not sorted and sorting the other list
        As we are expecting the values to be from highest to lowest, the sorted list is reversed
        Then we are validating if the unsorted list equals the sorted list
